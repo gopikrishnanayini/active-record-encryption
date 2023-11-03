@@ -1,0 +1,24 @@
+<% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+<% end %>
+<p>
+<strong>Name</strong>
+<%= @student.name %>
+</p>
+
+<p>
+<strong>Age</strong>
+<%= @student.age %>
+</p>
+
+<p>
+<strong>Class Name</strong>
+<%= @student.class_name %>
+</p>
+
+<p>
+<strong>Address</strong>
+<%= @student.address %>
+</p>
+
+<%= link_to 'Back', students_path %>

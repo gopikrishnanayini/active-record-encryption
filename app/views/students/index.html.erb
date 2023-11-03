@@ -1,0 +1,26 @@
+<h1>Listing student</h1>
+<table deep='1'>
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Class Name</th>
+<th>Address</th>
+</tr>
+<% if @students.present? %>
+	<% @students.each do |student| %>
+	<tr>
+		<td><%= student.name %></td>
+		<td><%= student.age %></td>
+		<td><%= student.class_name %></td>
+		<td><%= student.address %></td>
+		<td><%= link_to 'show', student_path(student) %></td>
+		<td><%= link_to 'edit', edit_student_path(student) %></td>
+		<td><%= link_to 'Destroy', student_path(student),
+		         method: :delete, data: { clear:'Are you sure?'} %></td>
+
+	</tr>
+	<% end %>
+<% end %>
+</table>
+
+<%= link_to 'New Student',new_student_path %>
